@@ -1,24 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
+import Editor from "./Editor";
+import "codemirror/lib/codemirror.css";
+import "codemirror/theme/material.css";
+import /* codemirror XML (HTML) mode */
+import /* codemirror CSS mode */
+import /* codemirror JS mode */
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className="pane top-pane">
+        <Editor /*HTML code editor*//>  
+        <Editor /*CSS code editor*//>
+        <Editor /*JS code editor*//>
+</div>
+
+  <div className="bottom-pane">
+  <iframe
+    srcDoc={srcDoc}
+    /*Title option*/
+    /*sandbox option*/
+    /*frameBorder option*/
+    /*width-height option*/
+    /*Title option*/
+  ></iframe>
+  </div>
   );
 }
 
